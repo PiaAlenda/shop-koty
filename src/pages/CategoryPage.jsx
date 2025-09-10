@@ -15,16 +15,22 @@ export default function CategoryPage() {
       <h1 className="category-title">{category}</h1>
 
       {filteredProducts.length === 0 ? (
-        <p>No hay productos en esta categoría.</p>
+        <p className="no-products">No hay productos en esta categoría.</p>
       ) : (
         <div className="category-grid">
           {filteredProducts.map((product) => (
             <Link
               key={product.id}
               to={`/product/${product.id}`}
-              className="category-card hover-lift"
+              className="category-card"
             >
-              <img src={product.image} alt={product.name} />
+              <div className="image-wrapper">
+                <img src={product.images[0]} alt={product.name} className="front" />
+                {product.images[1] && (
+                  <img src={product.images[1]} alt={`${product.name} back`} className="back" />
+                )}
+              </div>
+
               <div className="category-info">
                 <h3>{product.name}</h3>
                 <span>{product.price}</span>

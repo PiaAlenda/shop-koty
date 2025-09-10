@@ -217,7 +217,7 @@
 }
 
 .current-price {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
   color: #000;
   margin-right: 10px;
@@ -231,7 +231,7 @@
 }
 
 .original-price {
-  font-size: 14px;
+  font-size: 0.1rem;
   color: #999;
   text-decoration: line-through;
   transition: color 0.3s ease;

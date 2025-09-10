@@ -59,33 +59,34 @@
 .product-image-container {
   position: relative;
   width: 100%;
-  height: 270px;
   overflow: hidden;
 }
 
-.product-image {
-  position: absolute;
+.product-image-container img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: opacity 0.4s ease, transform 0.3s ease;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.5s ease;
 }
 
 .product-image.front {
-  opacity: 1;
-  z-index: 1;
-}
-
-.product-image.back {
-  opacity: 0;
+  position: relative;
   z-index: 2;
 }
 
-.product-image-container:hover .product-image.front {
+.product-image.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   opacity: 0;
 }
 
-.product-image-container:hover .product-image.back {
+.product-card:hover .product-image.front {
+  opacity: 0;
+}
+
+.product-card:hover .product-image.back {
   opacity: 1;
 }
 
