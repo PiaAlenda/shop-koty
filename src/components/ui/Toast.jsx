@@ -1,0 +1,29 @@
+"use client"
+
+import { useEffect } from "react"
+import "./Toast.css"
+
+export default function Toast({ message, type = "success", isVisible, onClose }) {
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        onClose()
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [isVisible, onClose])
+
+  if (!isVisible) return null
+
+  return (
+    <div className={`toast toast-${type} animate-slide-in-right`}>
+      <div className="toast-content">
+        <span className="toast-icon">{type === "success" ? "✅" : type === "error" ? "❌" : "ℹ️"}</span>
+        <span className="toast-message">{message}</span>
+        <button className="toast-close" onClick={onClose}>
+          ×
+        </button>
+      </div>
+    </div>
+  )
+}

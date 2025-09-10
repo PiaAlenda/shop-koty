@@ -1,0 +1,134 @@
+.showcase-section {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+
+.showcase-grid-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.showcase-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.showcase-item {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.showcase-item:hover {
+  transform: scale(1.02);
+}
+
+.showcase-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+}
+
+.showcase-label {
+  position: absolute;
+  bottom: 18px;
+  top: 43%;
+  left: 0;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+.showcase-item.slide-out .showcase-image {
+  transform: translateY(-100vh) scale(0.9);
+}
+
+.showcase-item:active {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.showcase-item:hover .showcase-image  {
+  transform: scale(1.05);
+}
+
+.gender-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.gender-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.2s;
+}
+
+.gender-item:hover .gender-image {
+  transform: scale(1.05);
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .gender-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .gender-item {
+    height: 280px;
+  }
+  .gender-label {
+    font-size: 1.5rem;
+    padding: 10px 0;
+  }
+
+}
+@media (max-width: 900px) {
+  .gender-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .showcase-item {
+    height: 280px;
+  }
+  .showcase-label {
+    font-size: 1.5rem;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-grid-top {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .showcase-grid-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-image-large {
+    height: 300px;
+  }
+}

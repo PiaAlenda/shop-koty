@@ -1,0 +1,147 @@
+/* Categories Page */
+.categories-page {
+  padding: 40px 0;
+  background: #f9f9f9;
+  font-family: Montserrat, sans-serif;
+}
+
+.categories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.categories-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.categories-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+/* Grid de productos */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Reutilizando estilos de product-card */
+.categories-grid .product-card {
+  background: white;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  max-width: 300px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.categories-grid .product-card:hover {
+  border: 1px solid rgba(122, 121, 121, 0.25);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Imagen del producto */
+.categories-grid .product-image-container {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+}
+
+.categories-grid .product-image {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.categories-grid .product-card:hover .product-image {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Nombre y precio */
+.product-info {
+  padding: 20px;
+  text-align: start;
+  position: relative;
+  z-index: 2;
+}
+
+.product-name {
+  font-size: 0.77rem;
+  font-weight: 100;
+  color: #000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-name {
+  color: #666;
+}
+
+.product-pricing .current-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin-right: 10px;
+}
+
+.product-card:hover .current-price {
+  transform: scale(1.05);
+  color: #dc2626;
+}
+
+.original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .filters {
+    justify-content: center;
+  }
+}

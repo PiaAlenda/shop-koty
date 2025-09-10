@@ -1,0 +1,390 @@
+/* Product Page Base */
+.product-page {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  padding-bottom: 4rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.product-page-container {
+  margin: 80px auto 0;
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-muted-foreground);
+}
+
+.breadcrumb span {
+  margin: 0 0.5rem;
+}
+
+/* Main Grid */
+.product-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gallery .main-image {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery .main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery .main-image:hover img {
+  transform: scale(1.05);
+}
+
+.thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.thumbnails button {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.thumbnails button.active {
+  border: 2px solid var(--color-primary);
+  transform: scale(1.05);
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnails button:hover img {
+  transform: scale(1.1);
+}
+
+/* Product Info */
+.product-infoo {
+  background-color: wheat;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ecfeff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.product-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Work Sans", system-ui, sans-serif;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+/* Price */
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.current-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  color: #000000;
+  text-decoration: line-through;
+}
+
+.discount {
+  background-color: #e3342f;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.stars span {
+  font-size: 1.2rem;
+  color: #d1d5db;
+}
+
+.stars span.filled {
+  color: #fbbf24;
+}
+
+/* Description */
+.description {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Colors & Sizes */
+.colors-options button,
+.sizes-options button {
+  transition: all 0.3s ease;
+}
+
+.colors-options button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ecfeff;
+  cursor: pointer;
+}
+
+.colors-options button.active {
+  border: 3px solid #000000;
+  transform: scale(1.1);
+}
+
+.sizes-options button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #ecfeff;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.sizes-options button.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.quantity-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.8;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #475569;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.quantity-controls span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Action Buttons */
+.action-buttons {
+  margin-top: 10rem;
+ align-items: center;
+ text-align: center;
+}
+
+.action-buttons button {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease
+}
+
+.add-cart {
+  background-color: black;
+  color: #ffffff;
+}
+
+.add-cart:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Features */
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #ecfeff;
+}
+
+.features li span {
+  color: black;
+}
+
+/* Similar Products Mejorado */
+.similar-products h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  font-family:"Work Sans", system-ui, sans-serif;
+  text-align: center;
+  color: #475569;;
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.similar-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-card);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.similar-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.similar-card:hover img {
+  transform: scale(1.1);
+}
+
+.similar-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.similar-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: var(--color-card-foreground);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.3s ease;
+}
+
+.similar-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+
+.similar-info span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Botón overlay al pasar mouse */
+.similar-card::after {
+  content: "Ver Producto";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.similar-card:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .similar-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .similar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .gallery .main-image {
+    height: 400px;
+  }
+
+  .similar-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

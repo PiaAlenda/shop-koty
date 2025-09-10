@@ -1,0 +1,180 @@
+.featured-section {
+  padding: 40px 0;
+  background: white;
+}
+
+.featured-title {
+   text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.featured-main-product {
+  text-align: center;
+}
+
+.featured-main-image {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.featured-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+}
+
+.featured-breakdown {
+  flex: 1;
+  max-width: 400px;
+}
+
+.breakdown-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.breakdown-items {
+  margin-bottom: 40px;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.breakdown-image {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.breakdown-info {
+  flex: 1;
+}
+
+.breakdown-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.breakdown-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.breakdown-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.breakdown-btn:hover {
+  background: #000;
+  color: white;
+}
+
+.comprar-look-btn {
+  width: 100%;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.comprar-look-btn:hover {
+  background: #333;
+}
+
+.next-outfit-btn {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid black;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.next-outfit-btn:hover {
+  transform: translateY(-55%) scale(1.05); /* se levanta y crece un poco */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* sombra más grande */
+}
+
+.featured-content {
+  position: relative;
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 0 auto 0 auto;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .featured-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .featured-main-image {
+    width: 250px;
+    height: 320px;
+  }
+}
