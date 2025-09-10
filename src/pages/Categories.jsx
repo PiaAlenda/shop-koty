@@ -3,9 +3,8 @@
 import { useState, useRef, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { useCart } from "../contexts/CartContext"
-import { products } from "../data/products" // importa tu lista de productos
-import "./Categories.css"
-
+import { products } from "../data/products"
+import "../components/product/ProductGrid.css"
 export default function Categories() {
   const { category } = useParams()
   const { addToCart } = useCart()
@@ -21,6 +20,7 @@ export default function Categories() {
     (p) => p.category.toLowerCase() === category.toLowerCase()
   )
 
+  // Detectar si la sección entra en viewport
   useEffect(() => {
     const observer = new window.IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
@@ -43,23 +43,24 @@ export default function Categories() {
       className={`product-grid-section fade-in-on-scroll${visible ? " visible" : ""}`}
     >
       <div className="container">
-        <h2 className="section-title animate-fade-in-up">{category}</h2>
+        <h2 className="section-title animate-fade-in-up">{category.toUpperCase()}</h2>
 
-        <div className="product-grid">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product, index) => (
+        {filteredProducts.length > 0 ? (
+          <div className="product-grid">
+            {filteredProducts.map((product, index) => (
               <div
                 key={product.id}
-                className={`product-card ${showBuyModal === product.id ? "show-modal" : ""} 
-                  animate-fade-in-up animate-delay-${(index + 1) * 100} ${
-                  animatedIndex === index ? "slide-up" : ""
-                }`}
+                className={`product-card animate-fade-in-up animate-delay-${
+                  (index + 1) * 100
+                } ${animatedIndex === index ? "slide-up" : ""}`}
               >
                 <div className="product-image-container">
                   <img
                     src={product.images[0]}
                     alt={product.name}
-                    className={`product-image front ${product.images[1] ? "has-back" : ""}`}
+                    className={`product-image front ${
+                      product.images[1] ? "has-back" : ""
+                    }`}
                   />
                   {product.images[1] && (
                     <img
@@ -69,7 +70,9 @@ export default function Categories() {
                     />
                   )}
 
-                  {product.discount && <span className="discount-badge">{product.discount}</span>}
+                  {product.discount && (
+                    <span className="discount-badge">{product.discount}</span>
+                  )}
 
                   {showBuyModal === product.id && (
                     <div className="buy-modal">
@@ -78,17 +81,25 @@ export default function Categories() {
                         {["S", "M", "L", "XL"].map((size) => (
                           <button
                             key={size}
-                            className={`size-btn${selectedSize === size ? " selected" : ""}`}
+                            className={`size-btn${
+                              selectedSize === size ? " selected" : ""
+                            }`}
                             onClick={() => setSelectedSize(size)}
                           >
                             {size}
                           </button>
                         ))}
                       </div>
-                      <button className="add-to-cart-btn" onClick={() => handleAddToCart(product)}>
+                      <button
+                        className="add-to-cart-btn"
+                        onClick={() => handleAddToCart(product)}
+                      >
                         Añadir al carrito
                       </button>
-                      <button className="close-modal-btn" onClick={() => setShowBuyModal(null)}>
+                      <button
+                        className="close-modal-btn"
+                        onClick={() => setShowBuyModal(null)}
+                      >
                         ×
                       </button>
                     </div>
@@ -103,20 +114,22 @@ export default function Categories() {
                       <span className="original-price">{product.originalPrice}</span>
                     )}
                   </div>
-                  <p className="installments">6 cuotas sin interés de $4.165,00</p>
+                  <p className="installments">6 cuotas sin interés</p>
                   <div className="product-action-buttons">
-                    <button className="buy-btn" onClick={() => handleBuy(product.id)}>COMPRAR</button>
+                    <button className="buy-btn" onClick={() => handleBuy(product.id)}>
+                      COMPRAR
+                    </button>
                     <button className="view-btn" onClick={() => handleView(product)}>
                       <img className="icon" src="/icons/iconsOjo.png" alt="ojo" />
                     </button>
                   </div>
                 </div>
               </div>
-            ))
-          ) : (
-            <p>No hay productos en esta categoría.</p>
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <p>No hay productos en esta categoría.</p>
+        )}
       </div>
       <hr className="section-divider" />
     </section>
